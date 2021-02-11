@@ -1,0 +1,59 @@
+body {
+    background-color: #f8f8f8;
+    font-family: "Poppins", sans-serif;
+    color: #1b1b1b;
+    max-width: 768px;
+    margin: 0 auto;
+    font-size: 18px;
+  }
+h1 {
+    font-size: 64px;
+    margin-bottom: 0;
+    color: seagreen;
+  }
+#Randomize{
+    --c: green;
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+#Randomize:hover {
+    color: black;
+}
+#Randomize:hover{
+    transform: translateY(0) scale(1.5);
+}
+
+#containerOfNumbers {
+    color: rgb(0, 0, 0);
+    width: 80%;
+    height: 40%;
+    border-radius: 8px;
+  }
+  .randomingNumber {
+    display: inline-block;
+    position: relative; /* to contain withEvent dot */
+    width: 15%;
+    text-align: center;
+    height: 10%;
+    border-radius: 10px;
+    border: 3px solid #BADA55;
+    font-weight: 500;
+    font-size: 19px;
+    margin: 0;
+    top: 50%;
+  }
