@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+}
+#menu li{
+    display: inline-flex;
+    padding: 5%;
+}
+.typOfMenu{
+    --c: green;
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+.typOfMenu:hover {
+    color: rgb(0, 0, 0);
+}
+.typOfMenu:hover{
+    transform: translateY(0) scale(1.5);
+}
+#firstButton{
+    --c: rgb(228, 4, 4);
+    
+}
+#secondButton{
+    --c: rgb(43, 107, 226);
+}
+#thirdButton{
+    --c: rgb(250, 94, 3);
+}
+#fourthButton{
+    --c: rgb(29, 153, 13);
+}
+#questionsPosition{
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+        text-align: center;
+    
+}
+#questionTitle{
+    padding: 10px;
+}
+section h2{
+
+        font-size: 64px;
+        margin-bottom: 10% 10%;
+        color: rgb(0, 62, 231);
+        text-align: center;
+        
+    
+}
+section div {
+
+    padding: 20px;
+    
+
+}
+section div h3{
+
+    --c: rgb(255, 6, 6);
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+section div h3:hover {
+    color: rgb(0, 0, 0);
+}
+section div h3:hover{
+    transform: translateY(0) scale(1.5);
+}
+.answer input{
+    --c: rgb(0, 0, 0);
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+.answer input:hover {
+    color: rgb(0, 0, 0);
+}
+.answer input:hover{
+    transform: translateY(0) scale(1.5);
+}
+.theAnswer:hover{
+    background-color: red;
+}

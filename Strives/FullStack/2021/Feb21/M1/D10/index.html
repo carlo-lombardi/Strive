@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <Header>
+        <img src="https://www.dng24.co.uk/wp-content/uploads/2016/12/quiz.jpg" alt=" Quiz Game">
+    </Header>
+    <nav>
+        <ul id="menu"> 
+            <li><a href="#" target="_blank"><input type="button" class="typOfMenu" id="firstButton" value="Home"></a></li>
+            <li><a href="https://kahoot.com/" target="_blank"><input type="button" class="typOfMenu" id="secondButton" value="Other Games"></a></li>
+            <li><a href="#" target="_blank"><input type="button" class="typOfMenu" id="thirdButton" value="Explore"></a></li>
+            <li><a href="#" target="_blank"><input type="button" class="typOfMenu" id="fourthButton" value="About us"></a></li>
+         </ul>
+    </nav>
+    <section id="questionsPosition">
+        <div id="questionTitle"><h2> QUESTIONS </h2></div>
+    
+    <div>
+        <h3> Marrakesh is the capital of Morocco  </h3>
+    </div> <!-- False - it's Rabat -->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <!-- Save -->
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> The unicorn is the national animal of Scotland  </h3>
+    </div> <!-- True -->
+    <div class="answer" ">
+        <input class="theAnswer" type="button" value="True" onclick="answering(event)" >
+        <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+    </div>
+    <div>
+        <h3> There are two parts of the body that can't heal themselves  </h3>
+    </div> <!-- False - there's only one: the teeth. -->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> 'A' is the most common letter used in the English language </h3>
+    </div> <!-- False - 'E' is the most common letter and appears in 11 percent of all english words, according to Oxford Dictionaries-->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> The river Seine in Paris is longer than the river Thames in London  </h3>
+    </div> <!-- True - The Seine is 777km, while the Thames is 346km -->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> Cinderella was the first Disney princess</h3>
+    </div> <!-- False - Snow White and the Seven Dwarfs was released first in December 1937
+    -->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> Coffee is made from berries</h3>
+    </div> <!--True - When coffee berries turn from green to bright red in colour, this indicaties ripeness and they are picked, processed, and dried, before being roasted and turned into coffee.-->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> An octopus has three hearts  </h3>
+    </div> <!-- True - an octopus has one main, systemic heart to pumps blood around its body. The two additional hearts are responsible for pumping blood over each of its gills. -->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> Thomas Edison discovered gravity  </h3>
+    </div> <!-- False - Isaac Newton discovered Gravity when he saw a falling apple while thinking about the forces of nature. Thomas Edison is thought to have invented the lightbulb.. -->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+    <div>
+        <h3> Cardi B's real name is Cardigan Backyardigan  </h3>
+    </div> <!--False - that was a meme. Her real name is Belcalis Marlenis Almánzar.-->
+        <div class="answer">
+            <input class="theAnswer" type="button" value="True" onclick="answering(event)">
+            <input class="theAnswer" type="button" value="False" onclick="answering(event)">
+        </div>
+</section>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--
+           QUIZ GAME!
+
+        RULES:
+        / The player must guess correctly a certain amount of questions
+        / Each correct answer gives him one point
+        / Answers could be â€œmultipleâ€ or â€œtrue/falseâ€
+        / At the end of the game, the user must know his total score
+
+        QUESTIONS:
+        / You can get them from this URL ( http://bit.ly/strive_QUIZZ ) or you can write your own
+        / Could be multiple of boolean (true / false)
+        / [EXTRA] Show if the answer was wrong or correct after clicking
+        / [EXTRA] Present them â€œone a timeâ€
+
+        HINTS:
+        / Keep a global variable â€œscoreâ€ for the score
+        / Keep a variable â€œquestionNumberâ€ for the â€œquestionâ€ the user is answering
+        / When â€œquestionNumberâ€ is bigger then the available questions, present the score
+        / Start working with the question saved in a variable, and then include AJAX etc
+        / Start with the easier version and THEN implement the â€œEXTRAsâ€
+        / Please debug everything / try it on the console to be sure of what to expect from your code
+
+        EXTRA:
+        / Show if the answer was wrong or correct after clicking
+        / Present questions one a time
+        / Let the user select difficulty and number of questions (you can get q/a from https://opentdb.com/api.php?amount=10&category=18&difficulty=easy modifying amount and difficulty)
+*/-->
