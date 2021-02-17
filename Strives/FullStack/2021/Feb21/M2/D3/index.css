@@ -19,3 +19,13 @@
     background-color:yellow;
     padding:0.1em 0.2em;
 }
+#bigPicture h1,p, hr, p{
+    margin-top: 200px;
+}
+.dropdown{
+    margin: 200px;
+    
+}
+.position{
+    margin: 100px;
+}
