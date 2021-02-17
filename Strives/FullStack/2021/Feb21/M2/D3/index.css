@@ -1,0 +1,21 @@
+#logoImage{
+    width: 10rem;
+}
+@media screen and (max-width: 600px) {
+    #mealSecction {
+      display: hidden;
+    }
+  }
+#bigPicture{
+    background-image:url(https://s29081.pcdn.co/wp-content/uploads/2018/01/raja-ampat-photos-06085.jpg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50rem;
+    width: 150rem;
+    
+}
+.simple-highlight{
+    
+    background-color:yellow;
+    padding:0.1em 0.2em;
+}
