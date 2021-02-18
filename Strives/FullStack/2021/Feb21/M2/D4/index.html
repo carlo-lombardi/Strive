@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+
+    The app is pretty straight forward, use Bootstrap to add the following features:
+    - The user can add a list of names
+    - The user can set the number of teams
+    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
+    - Each team should be inside a "column"
+    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
+    - [EXTRA] Create a button to reset the state of the app
+-->
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <title>TEAM GENERATOR</title> 
+
+        <style>
+            body{
+                background-color: rgb(255, 255, 255);
+            }
+            h1{
+                position: relative;
+                text-align: center;
+                color: blanchedalmond;
+            }
+            h4 { 
+                color:chartreuse
+            }
+            .c2{
+                border: 2px red solid ;
+                height: 20vh;
+            }
+            #listOfName{
+                display: none;
+
+            }
+
+
+        </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.996.0" data-gr-ext-installed="">
+    <!--  -->
+    
+    <div class="container">
+        <h1>TEAM GENERATOR</h1>
+            <div class="row">          
+                <div class="col-sm-12 col-lg ml-5 mr-5"class="list-of-name"><h4> List of names</h4></div>
+                    <input type="text" name="dato[]" class="input-form data-input" id="teamsNames">
+                    <button type="button" class="btn btn-danger" onclick="addTeamsnames(event)">Add</button>
+                <div class="col-sm-12 col-lg ml-5 mr-5" class="list-of-name2"><h4> Teams' N°</h4></div>
+                    <input type="number" name="dato[]" class="input-form2 data-input-number">
+                    <button type="button" class="btn btn-danger btn2"  onclick="addOfNumberOfTeam(event)">Add</button>
+            </div>
+    </div>
+    <div class="container">
+            <div class="row">
+                <div class="col-6 offset-3 mt-5 c2">
+                    <ul id="listOfName">
+                        <!-- Dinamico -->
+                    </ul>
+                </div>
+              </div>
+    </div>
+
+
+    <script>
+        function addTeamsnames(event){
+            let myArray= new Array()
+            let inputValue = document.getElementsByClassName("data-input")
+            let namesValues = [].map.call(inputValue,function(dataInput){
+                myArray.push(dataInput.value)
+            })
+            console.log(myArray)
+            
+            let ul = document.getElementById("listOfName")
+            let li = document.createElement("li")
+            let everyName = namesValues()
+            li.innerHTML = everyName
+            ul.appendChild(li)
+
+        }
+        function addOfNumberOfTeam(event){
+            let myArray= new Array()
+            let inputValue = document.getElementsByClassName("data-input-number")
+            namesValues = [].map.call(inputValue,function(dataInput){
+                    myArray.push(dataInput.value)
+            })
+            console.log(myArray)
+        }
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
