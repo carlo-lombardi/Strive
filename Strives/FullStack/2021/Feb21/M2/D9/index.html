@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <!--
+        ASSIGNMENT RULES
+        - The solution must be pushed to the repository and submitted the GitHub link on Eduflow before 17:00
+        - You can google / use StackOverflow BUT we suggest you to use just the material provided
+        - To test the page, just open it with your default browser.
+        - Use Bootstrap4.6 classes to render the page.
+        - Use containers and rows correctly in order to have a great display
+
+        ASSIGNMENT TOPIC 
+        You are creating a website to showcase your favourite albums.
+        In this page you'd like to have a short bio of yourself, the top albums of your life, 
+        the worst album you ever listen to and everything related to the music you love.
+
+        IMPORTANT:
+        Start from the previous Musical assignment project you've created on M2-D2
+
+        NOTE:
+        Most of the time, even the most expert designers, need inspiration.
+        Spend some time surfing the web searching for the way of representing the albums that you like the most.
+        Could be the Amazon way, the Spotify or Apple music way or some other blog out there.
+        -->
+
+    
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+      /* PREVIOUS STUFF */
+        body{
+        margin: 0;
+        background-image:url(body-back.jpg);
+        }
+        .deleting{
+        width: 40px;
+        }
+
+    </style>
+    </head>
+  <body>
+    <!-- EXERCISE 1
+        Use the specific bootstrap component to implement a Breadcrumb
+        -->
+       
+        <nav aria-label="breadcrumb ">
+            <ol class="breadcrumb text-light bg-danger m-0 ">
+              <li class="breadcrumb-item mx-auto"><img src="logo.png" alt="logo-music" width="25px" height="25px"><span display-4>Carlo Lombardi</span></li>
+            </ol>
+        </nav>
+
+    <!-- EXERCISE 2as
+            Create a Jumbotron section with a quick explanation / image of the website
+        -->
+        <div class="jumbotron jumbotron-fluid bg-dark">
+            <div class="container">
+                <h1 class="display-4 font-weight-bold text-light">The best albums </h1>
+                <p class="lead font-weight-bold text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid reprehenderit mollitia, voluptatum velit esse nisi amet veniam ab explicabo beatae accusantium vero doloremque sed, temporibus, magni culpa officia deleniti consectetur?</p>
+            </div>
+          </div>
+
+    <!-- EXERCISE 3
+        Foreach album in the favorite list, place the genre inside a badge
+
+        EXERCISE 4
+        Foreach album in the favorite list, use the Bootstrap Card to contain it.
+        Use card layouts to format it in the best and more compatible way.
+        --> 
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0 ">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/Tranquility_Base_Tour_Poster.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><h5>Tranquility Base Hotel</h5><span class="badge badge-secondary">Indie Rock</span></p>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Weezer_-_Blue_Album.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text"><h5>Weezer (Blue Album)</h5><span class="badge badge-secondary">Indie Rock</span></p>
+                </div>
+              </div>
+            </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark text-white bg-dark m-5" style="width: 14rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Alex_Turner_Submarine.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><h5>Submarine (EP)</h5><span class="badge badge-secondary">Indie Rock</span></p>
+                    </div>
+                  </div>
+                </div>
+              
+
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">       
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Alt-J_-_An_Awesome_Wave.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text"><h5>An Awesome Wave</h5><span class="badge badge-secondary">Indie Rock</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f0/Insideininsideout.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><h5>Inside In / Inside Out</h5><span class="badge badge-secondary">Indie Rock</span></p>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/75/Downinalbion.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text"><h5>Down in Albion</h5><span class="badge badge-secondary">Indie Rock</span></p>
+                </div>
+              </div>
+            </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Slipknot_-_Slipknot2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><h5>Slipknot (album)</h5><span class="badge badge-secondary">Heavy metal</span></p>
+                    </div>
+                  </div>
+                </div>
+              
+
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">       
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/System_Of_A_Down-Hypnotize.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text"><h5>Hypnotize (album)</h5><span class="badge badge-secondary">Nu metalal</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Blink-182_-_Blink-182_cover.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><h5>Blink-182 (album)</h5><span class="badge badge-secondary">Alternative Rock</span></p>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/d8/The_Rolling_Stones_-_Goats_Head_Soup.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text"><h5>Goats Head Soup</h5><span class="badge badge-secondary">Rock</span></p>
+                </div>
+              </div>
+            </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/1/17/ACDC-TNT.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><h5>T.N.T. (album)</h5><span class="badge badge-secondary">Metal</span></p>
+                    </div>
+                  </div>
+                </div>
+              
+
+
+              <div class="col-lg-3 col-md-4 col-sm-6 p-0">       
+                <div class="card text-white bg-dark m-5" style="width: 14rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Manu_Chao_Clandestino.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text"><h5>Clandestino</h5><span class="badge badge-secondary">Reggae</span></p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+</main>  
+
+
+
+
+    <!-- EXERCISE 5
+            Place the tracklist inside a Bootstrap table.
+            The row column must be alternate.
+            Use one column for the track order, one of the title and one for the length.
+            (If you want, you can also add extra columns)
+        -->
+        <div class="container">
+        <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Lenght</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Song</td>
+                <td>Song</td>
+                <td>Song</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm " onclick="remover(event)">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>Mark</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm " onclick="remover(event)" >Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>3.45</td>
+                <td>2.56</td>
+                <td>4.06</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Song</td>
+                <td>Song</td>
+                <td>Song</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>Mark</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>3.45</td>
+                <td>2.56</td>
+                <td>4.06</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Song</td>
+                <td>Song</td>
+                <td>Song</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>Mark</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>3.45</td>
+                <td>2.56</td>
+                <td>4.06</td>
+                <td class="deleting"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+
+
+    <!-- EXERCISE 6
+            Add a DELETE bootstrap button on each row of the tracklist, with appropriate transitions on the various pseudo-class states 
+            which will apply for the subsequent button you'll use.
+            Clicking on the button the row must disappear. 
+            Add a fade-out effect using a CSS transition effect
+        -->
+
+    <!-- EXERCISE 7
+            Add a "Contact Me" form in the footer.
+            The "Contact Me" form has 2 fields:
+            - Email
+            - Text of the message
+            Use the correct Bootstrap styles for styling the buttons
+        -->
+
+    <!-- EXERCISE 8 
+            Add to the footer an extra column with the same links of the top nav.
+        -->
+
+    <!-- EXERCISE 9
+            Add a button "Add Track" under the track list the album, add a nice shadow transition when the button is hovered
+        -->
+
+    <!-- EXERCISE 10
+            On "Add Track" button, open a new modal.
+            The modal shall contain a form with:
+            - Track number
+            - Track name
+            - Track length
+            - Track featuring
+            - Live Track (checkbox)
+            The fields should be inside an Input Group and divided in 2 columns.
+        -->
+
+    <!-- EXERCISE 11
+            Add 2 bootstrap buttons at the bottom of the modal window:
+            - Close => clear the fields and close the modal
+            - Add => Add the track to the list of tracks in the main page and display an alert success message 
+            - The new list-element added to the list will appear with a fade-in transition effect
+            https://getbootstrap.com/docs/4.6/components/alerts/
+            [EXTRA] Make the message disappear after 5 seconds
+            https://www.w3schools.com/jsref/met_win_settimeout.asp
+        -->
+
+    <!-- EXERCISE 12
+            All the field (except for Feat. and Live Track) are required fields and requires validation.
+            If the user clicks on the Add button and some fields are empty, a warning alert must be show
+        -->
+
+    <!-- ############### -->
+    <!-- ###  EXTRA  ### -->
+    <!-- ############### -->
+
+    <!-- EXERCISE 13
+            For each "Album cover" in your page, add a tooltip with the title
+        -->
+
+    <!-- EXERCISE 14
+            Update the header and footer links using scrollspy to render a smooth transition to the parts of the document.
+        -->
+
+    <!-- EXERCISE 15
+            Add a Album Carousel with controls to display the top 10 albums
+        -->
+
+    <!-- EXERCISE 16
+            Make every section of the page "collapsable" if the user clicks on the section title
+        -->
+
+
+        <script>
+            function remover(event){
+
+                let button = document.querySelectorAll("tr")
+                let buttonArr = Array.from(button)
+
+                button.forEach(x =>
+
+                    //x.classList.add("d-none")
+                    
+                )
+                //console.log(x)
+                //button.classList.add("d-none")  
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>
