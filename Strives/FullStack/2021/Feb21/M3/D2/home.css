@@ -1,0 +1,175 @@
+* {
+    color: white !important;
+  }
+  @font-face {
+    font-family: Circular-bold;
+    src: url("/fonts/CircularSpUIv3T-Bold.8d0a45cc.woff2");
+  }
+  
+  @font-face {
+    font-family: Circular-book;
+    src: url("/fonts/CircularSpUIv3T-Book.3466e0ec.woff2");
+  }
+  
+  body {
+    background-color: black;
+    font-family: Circular-book;
+    overflow-x: hidden;
+  
+  }
+  .viewport2{
+    height: 150vh;
+  }
+  .container-1 {
+    background: rgb(25, 20, 20);
+    background: linear-gradient(320deg, rgba(25, 20, 20, 1) 0%, rgba(36, 69, 108, 1) 100%);
+  }
+  
+  .card-body {
+    padding: 0.25rem;
+  }
+  
+  .card {
+    width: 150px;
+    height: 180px;
+    background-color: inherit;
+  }
+  
+  span.button {
+    font-size: 10px;
+    cursor: pointer;
+  }
+  
+  .active {
+    border-bottom: 1px solid #1db954 !important;
+  }
+  
+  .icons {
+    position: absolute;
+    display: none !important;
+    top: 65px;
+  }
+  .card:hover .icons {
+    display: flex !important;
+  }
+  
+  .card:hover > .overlay {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+  }
+  
+  .fa-play-circle {
+    transform: scale(1.3);
+  }
+  
+  .fa-play-circle:hover {
+    transform: scale(1.5);
+  }
+  
+  .fa-heart,
+  .fa-ellipsis-h {
+    transform: scale(1.2);
+  }
+  
+  .dropdown-menu {
+    background-color: #282828 !important;
+  }
+  
+  .dropdown-item {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #404040 !important;
+  }
+  
+  .nav-items {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  #sidebar {
+    background-color: black;
+  }
+  #desktop-logo {
+    width: 130px;
+    height: 80px;
+  }
+  
+  #mobile-logo {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .sidebar-links,
+  .artist-name,
+  .album-year-songs,
+  #desktop-logo,
+  .artist-name,
+  .song-duration {
+    color: #b3b3b3;
+  }
+  
+  hr {
+    background-color: #b3b3b3;
+    height: 0.1px;
+    width: 90%;
+  }
+  
+  #user-img {
+    height: 25px;
+    width: 25px;
+  }
+  
+  #player {
+    background-color: #181818;
+    position: fixed;
+    bottom: 0;
+  }
+  #player-info img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .player-buttons img {
+    width: 20px;
+    height: 20px;
+    color: #b3b3b3;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #player-controls-mid {
+    width: 40%;
+    cursor: pointer;
+  }
+  #play-button {
+    background-color: black;
+    border-radius: 50%;
+    filter: invert(100%);
+    height: 30px;
+    width: 30px;
+  }
+  #seek-bar {
+    height: 3px;
+    width: 80%;
+    background-color: #b3b3b3;
+    border-radius: 20px;
+  }
+  #volume-controls img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .volume-bar {
+    background-color: #b3b3b3;
+    height: 3px;
+    width: 100px;
+    border-radius: 20px;
+  }
