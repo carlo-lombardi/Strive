@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0436)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/119638481311361.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RDWPS6YGR%2F20210316%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210316T130242Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27M3-D7.html&X-Amz-Signature=7030b12af032a4bbaecd643a0989e30a060bcdc2c0016a4bc515d43a6d8fbe90 -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Required meta tags -->
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="./index_files/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <!--
+
+      PAIR PROGRAMMING EXERCISE.
+      1 DRIVER, 1 NAVIGATOR.
+
+      1 Exercise each. Use GitHub to share the code.
+
+      Less exercise, more complicated. 
+
+      Ex1) Retrieve and display, using async / await pattern the users from: https://jsonplaceholder.typicode.com/users 
+      Ex2) Create a dropdown (<select>) that allows the user to select between name, username and email. 
+           Create then a filter. When the user types in something, you should filter the user based on the input and on the value of the select.
+           Es.: select on NAME. Filter input = Glenna, only user id number 9 should remain
+
+      Ex3) Create a function that, from the list of users, extracts only the name
+      Ex4) Create a function that, from the list of users, creates an array of addresses as string and not as an object. Like:
+              {
+              "street": "Victor Plains",
+              "suite": "Suite 879",
+              "city": "Wisokyburgh",
+              "zipcode": "90566-7771",
+              "geo": {
+                "lat": "-43.9509",
+                "lng": "-34.4618"
+              }
+          Should become Victor Plains, Suite 879, Wisokyburgh (90566-7771)
+      
+      Ex5) Add a button that sorts the list by name ascending / descending (ONE button)
+      Ex6) Add a link on each user, when clicked it must go to a detail page, where to user information are presented (from the API)
+
+      EXTRA)
+      Visualize on a Google Map plugin all the users (using lat & lng)
+    -->
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.998.0" data-gr-ext-installed="">
+    <div class="container">
+      <div class="row">
+        <div id="inserting-card" class="col-6"></div>
+        <div class="col-6">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Filter
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button onclick="gettingTheValueName()" class="dropdown-item">
+                NAME
+              </button>
+              <button onclick="gettingTheValueUserName()" class="dropdown-item">
+                USERNAME
+              </button>
+              <button onclick="gettingTheValueEmail()" class="dropdown-item">
+                EMAIL
+              </button>
+            </div>
+            <div class="showing-input d-none">
+              <input type="text" name="name" id="grabbing-name" />
+              <!--<<input
+                type="text"
+                name="username"
+                id="grabbing-username"
+                class="d-none"
+              />
+              <input
+                type="email"
+                name="email"
+                id="grabbing-email"
+                class="d-none"
+              />-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="./index_files/jquery-3.5.1.slim.min.js.download"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="./index_files/bootstrap.bundle.min.js.download"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      let rawData = [];
+      let displaying = () => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            rawData = data;
+            renderTheCard(data);
+          });
+      };
+      let renderTheCard = (data) => {
+        let insertingTheCArd = document.getElementById("inserting-card");
+        insertingTheCArd.innerHTML = "";
+        insertingTheCArd.innerHTML = data
+          .map((mainInfo) => basicCard(mainInfo))
+          .join("");
+      };
+
+      let basicCard = (info) => {
+        return `
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h4>${info.name}</h4>
+            <ul>
+              <p>address: ${info.address.city}</p>
+              <p>Company: ${info.company.name}</p>
+              <p>Email:   ${info.email}</p>
+              <p>Phone:   ${info.phone}</p>
+              <p>Username:  ${info.username}</p>
+              <p>Website: ${info.website}</p>
+            </ul>
+          </div>
+        </div>
+        `;
+      };
+      let gettingTheValueName = () => {
+        let firstInput = document.querySelector(".showing-input");
+        firstInput.classList.toggle("d-none");
+        let inputValue = document.getElementById("grabbing-name");
+        console.log(inputValue);
+        inputValue.onchange = function () {
+          const filtered = rawData.filter((user) =>
+            user.name.toLowerCase().includes(inputValue.value.toLowerCase())
+          );
+          renderTheCard(filtered);
+        };
+      };
+      let gettingTheValueUserName = () => {
+        let input = document.querySelector(".showing-input");
+        input.innerHTML = `
+        <input type="text" name="username" id="grabbing-username" placeholder="Username">
+        `;
+      };
+      let gettingTheValueEmail = () => {
+        let input = document.querySelector(".showing-input");
+        input.innerHTML = `
+        <input type="email" name="email" id="grabbing-email" placeholder="email">
+        `;
+      };
+      window.onload = displaying();
+    </script>
+  </body>
+</html>
