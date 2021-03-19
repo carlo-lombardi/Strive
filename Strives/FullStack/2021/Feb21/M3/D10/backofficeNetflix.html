@@ -1,0 +1,226 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body class="color-black">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="index.html">
+        <img
+          class="size-grow"
+          src="../Netflix-Logo.wine.svg"
+          width="130px"
+          height="auto"
+          alt=""
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="theItems.html">The Items</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="backofficeNetflix.html">Backoffice</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col col-md-6 offset-md-3">
+        <h1 class="text-center">Welcome to the Back Office</h1>
+        <h4 id="subtitle-camaleonico">
+          <!-- Aca agregaremos si viene con el id o viene agregar un video
+              si viene con id: Edit Video
+              si viene sin id: Add Video
+          -->
+        </h4>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <div>
+              <label for="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                placeholder="Name here"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="description">Description</label>
+              <textarea
+                rows="4"
+                id="description"
+                class="form-control"
+                placeholder="Description here"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="category">Category</label>
+              <input
+                id="category"
+                type="text"
+                class="form-control"
+                placeholder="Category here"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="imageUrl">Image Url</label>
+              <input id="imageUrl" type="url" class="form-control" />
+            </div>
+          </div>
+          <div id="the-camel-button" class="form-group"></div>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let id;
+      window.onload = async () => {
+        console.log("page has been rendered");
+        let urlParams = new URLSearchParams(window.location.search);
+        id = urlParams.get("id");
+        console.log("ID IS", id);
+        if (id) {
+          document.querySelector(
+            "#the-camel-button"
+          ).innerHTML = `<button id class="btn btn-primary" type="submit"> Edit product</button>`;
+          let response = await fetch(
+            "https://striveschool-api.herokuapp.com/api/movies/" + id,
+            {
+              headers: {
+                Authorization:
+                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDBlOGIwNWU4MTI2ZTAwMTVkMDRjMmMiLCJpYXQiOjE2MTYxNjI5MTQsImV4cCI6MTYxNzM3MjUxNH0.gc3ZIQDRNdJkg3fdOBAiVRImYd8QDUKKVgAvZzVzsnA",
+              },
+            }
+          );
+          let theEventAlreadyCreated = await response.json();
+          document.querySelector("#subtitle-camaleonico").innerHTML =
+            "(Edit content)";
+          (document.getElementById("name").value = theEventAlreadyCreated.name),
+            (document.querySelector("#description").value =
+              theEventAlreadyCreated.description),
+            (document.querySelector("#category").value =
+              theEventAlreadyCreated.category),
+            (document.querySelector("#imageUrl").value =
+              theEventAlreadyCreated.imageUrl);
+        } else {
+          document.querySelector(
+            "#the-camel-button"
+          ).innerHTML = `<button id class="btn btn-primary" type="submit"> Create new content</button>`;
+          document.querySelector("#subtitle-camaleonico").innerHTML =
+            "(Create new content)";
+        }
+      };
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        let response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/movies/",
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDBlOGIwNWU4MTI2ZTAwMTVkMDRjMmMiLCJpYXQiOjE2MTYxNjI5MTQsImV4cCI6MTYxNzM3MjUxNH0.gc3ZIQDRNdJkg3fdOBAiVRImYd8QDUKKVgAvZzVzsnA",
+            },
+          }
+        );
+        let data = await response.json();
+        console.log(data);
+
+        let myContent = {
+          name: document.getElementById("name").value,
+          description: document.querySelector("#description").value,
+          category: document.querySelector("#category").value,
+          imageUrl: document.querySelector("#imageUrl").value,
+        };
+        let theDataFromTheUrl;
+        try {
+          if (id) {
+            theDataFromTheUrl = await fetch(
+              "https://striveschool-api.herokuapp.com/api/movies/" + id,
+              {
+                method: "PUT",
+                body: JSON.stringify(myContent),
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization:
+                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDBlOGIwNWU4MTI2ZTAwMTVkMDRjMmMiLCJpYXQiOjE2MTYxNjI5MTQsImV4cCI6MTYxNzM3MjUxNH0.gc3ZIQDRNdJkg3fdOBAiVRImYd8QDUKKVgAvZzVzsnA",
+                },
+              }
+            );
+          } else {
+            theDataFromTheUrl = await fetch(
+              "https://striveschool-api.herokuapp.com/api/movies/",
+              {
+                method: "POST",
+                body: JSON.stringify(myContent),
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization:
+                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDBlOGIwNWU4MTI2ZTAwMTVkMDRjMmMiLCJpYXQiOjE2MTYxNjI5MTQsImV4cCI6MTYxNzM3MjUxNH0.gc3ZIQDRNdJkg3fdOBAiVRImYd8QDUKKVgAvZzVzsnA",
+                },
+              }
+            );
+            let data = await theDataFromTheUrl.json();
+            console.log(data);
+          }
+
+          if (theDataFromTheUrl.ok) {
+            alert(`Event was ${id ? "edited" : "created"} successfully!`);
+            //window.location.assign("index.html");
+          } else {
+            alert("something went bad really bad");
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    </script>
+  </body>
+</html>
