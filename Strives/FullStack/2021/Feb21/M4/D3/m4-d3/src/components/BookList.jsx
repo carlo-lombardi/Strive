@@ -1,13 +1,12 @@
 import React from 'react'
 import SingleBook from './SingleBook'
-import { Form, FormControl, Button } from 'react-bootstrap'
+import { Form, FormControl} from 'react-bootstrap'
 
 
 const BookList = (props) =>(
   <div>
      <Form inline>
-      <FormControl id="search" type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
+      <FormControl onKeyPress={filtering()} id="search" type="text" placeholder="Search" className="mr-sm-2" />
     </Form>
 
 
@@ -15,6 +14,13 @@ const BookList = (props) =>(
     
   </div>
 )
+const filtering = () =>{
+    let search = document.querySelector("#search")
+    let data = document.querySelector("#books")
+    console.log(search);
+    console.log(data);
+
+}
 
 
 
